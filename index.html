@@ -10,27 +10,10 @@
 </head>
 <body>
   <div id="root"></div>
-
+<script src="nprom_data.js"></script>
   <script type="text/babel">
     // 内嵌数据，不依赖外部文件
-    const DEFAULT_DATA = [
-      { id:"01", label:"01-场景主题", icon:"🏠",
-        categories:[
-          { id:"01-01", label:"室内场景", phrases:["bedroom","hotel room","bathroom","living room"] },
-          { id:"01-02", label:"室外场景", phrases:["rooftop","garden","balcony","beach"] },
-          { id:"01-03", label:"特殊场景", phrases:["onsen","love hotel","changing room"] },
-        ]},
-      { id:"02", label:"02-景别构图", icon:"🎞",
-        categories:[
-          { id:"02-01", label:"景别", phrases:["close-up","medium shot","full body"] },
-          { id:"02-02", label:"构图", phrases:["rule of thirds","centered composition","dutch angle"] },
-        ]},
-      { id:"03", label:"03-光线打光", icon:"☀️",
-        categories:[
-          { id:"03-01", label:"自然光", phrases:["sunlight","golden hour","moonlight"] },
-          { id:"03-02", label:"人工光", phrases:["studio lighting","rim lighting","backlit"] },
-        ]},
-    ];
+    const DEFAULT_DATA = window.DEFAULT_DATA;
 
     const KEY = "pb_v3";
     const load = () => { try { const r = localStorage.getItem(KEY); return r ? JSON.parse(r) : DEFAULT_DATA; } catch { return DEFAULT_DATA; } };
